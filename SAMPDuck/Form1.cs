@@ -684,6 +684,7 @@ namespace SAMPDuck
                 //Clear both lists
                 errorList.Clear();
 
+                bool anyErrors = false;
 
                 //Check for errors
                 if (File.Exists(compilerDir + "\\errors"))
@@ -696,6 +697,8 @@ namespace SAMPDuck
 
                     foreach (string line in lines)
                     {
+                        if (line == "") continue;
+                        if (line.Contains("error")) anyErrors = true;
                         //Add to error list
                         ListViewItem lv = new ListViewItem(line);
                         errorList.Add(lv);
@@ -704,7 +707,7 @@ namespace SAMPDuck
                     }
                     File.Delete(compilerDir + "\\errors");
                 }
-                else
+                if(!anyErrors)
                 {
                     File.Delete(compilerDir + "\\errors");
                     File.Delete(compilerDir + fileName.Remove(fileName.IndexOf('.'), 4) + ".p");
@@ -761,28 +764,21 @@ namespace SAMPDuck
                 if (var.Selected)
                 {
 
-                    //export filename from string
-                    Match rx = Regex.Match(var.Text, @".p\([0-9]*\)");
-                    string one;
+                    //export line from string
+                    string[] tokens = var.Text.Split('(', ')');
+                    int line = 0;
                     try
                     {
-                        one = rx.Value.Remove(0, 3);
+                        int.TryParse(tokens[1], out line);
                     }
-                    catch
-                    {
-                        one = rx.Value.Remove(0, 1);
-                    }
-                    one = one.Remove(one.IndexOf(')'));
-                    
+                    catch { }
 
-                    int linen = 0;
-                    int.TryParse(one, out linen);
                     if (var.Text.Contains("symbol is never used"))
                     {
-                        MessageBox.Show("Du hast einen Fehler oder eine Warnung angeklickt, welche/r angeblich in der letzten Zeile ("+ linen  + ") sein soll.\nDas ist nicht der Fall!\nDas Symbol welches in der Meldung genannt wurde, ist sehr wahrscheinlich irgendwo im Script zu finden. Nutze die Suche (STRG+S)!");
+                        MessageBox.Show("Du hast einen Fehler oder eine Warnung angeklickt, welche/r angeblich in der letzten Zeile ("+ line + ") sein soll.\nDas ist nicht der Fall!\nDas Symbol welches in der Meldung genannt wurde, ist sehr wahrscheinlich irgendwo im Script zu finden. Nutze die Suche (STRG+S)!");
                     }
-                    scintilla1.Lines[linen--].Goto();
-                    scintilla1.SetSelection(scintilla1.Lines[linen].Position, scintilla1.Lines[linen].EndPosition);
+                    scintilla1.Lines[line--].Goto();
+                    scintilla1.SetSelection(scintilla1.Lines[line].Position, scintilla1.Lines[line].EndPosition);
                     break;
                 }
             }
