@@ -1,4 +1,5 @@
-# PawnDuck
+[logo]: https://raw.githubusercontent.com/Cocnut/PawnDuck/master/SAMPDuck/pawnduckico.ico ""
+# PawnDuck 
 Hi! Im sorry, but this project's *'front-end'* language is and will be for now **only in german**.
 ## Info
 PawnDuck ist ein **Scripting Editor**, **IDE** oder ... **Editor** für **PAWN** Skripts.<br>
