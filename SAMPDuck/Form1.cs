@@ -803,7 +803,7 @@ namespace SAMPDuck
             {
                 if (e.Item.Text == item.identifer)
                 {
-                    label_Args.Text = "Verwendung: " + item.fullIdentifer + " (STRG+P)";
+                    label_Args.Text = "Verwendung: " + item.fullIdentifer;
                 }
             }
 
