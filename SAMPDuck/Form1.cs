@@ -205,6 +205,7 @@ namespace SAMPDuck
                     t_Backup.RunWorkerAsync();
                 }
                 catch { }
+            else autoBackup_cb.Checked = false;
 
 
 
@@ -691,12 +692,10 @@ namespace SAMPDuck
                 string errors = errorFile.ReadToEnd();
                 errorFile.Close();
 
-                MessageBox.Show("1");
                 string[] lines = errors.Split('\n');
 
                 foreach (string line in lines)
                 {
-                    MessageBox.Show("2");
                     //Add to error list
                     ListViewItem lv = new ListViewItem(line);
                     errorList.Add(lv);
@@ -763,7 +762,15 @@ namespace SAMPDuck
 
                     //export filename from string
                     Match rx = Regex.Match(var.Text, @".p\([0-9]*\)");
-                    string one = rx.Value.Remove(0, 3);
+                    string one;
+                    try
+                    {
+                        one = rx.Value.Remove(0, 3);
+                    }
+                    catch
+                    {
+                        one = rx.Value.Remove(0, 1);
+                    }
                     one = one.Remove(one.IndexOf(')'));
                     
 
@@ -1493,25 +1500,33 @@ namespace SAMPDuck
             {
 
             }
-            if(!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\PawnDuck"))
+            if(!needSaveFile)
             {
-                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\PawnDuck");
-            }
-            string[] spl = currentFilePath.Split('\\');
+                if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\PawnDuck"))
+                {
+                    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\PawnDuck");
+                }
+                string[] spl = currentFilePath.Split('\\');
 
-            StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\PawnDuck\\backup_" + spl[spl.Length-1] + ".pwn", false, Encoding.Default);
-            file.Write(scintilla1.Text);
-            file.Close();
+                StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\PawnDuck\\backup_" + spl[spl.Length - 1] + ".pwn", false, Encoding.Default);
+                file.Write(scintilla1.Text);
+                file.Close();
+            }
+            
         }
 
         private void t_Backup_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            String time;
+            if(!needSaveFile)
+            {
+                String time;
 
-            time = DateTime.Now.ToString("HH:mm");
-            output.Text = output.Text + "[" + time + "] Ein Backup wurde erstellt.\n";
-            lastBackup = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds+120;
-            if (autoBackup_cb.Checked) t_Backup.RunWorkerAsync();
+                time = DateTime.Now.ToString("HH:mm");
+                output.Text = output.Text + "[" + time + "] Ein Backup wurde erstellt.\n";
+                lastBackup = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds + 120;
+                if (autoBackup_cb.Checked) t_Backup.RunWorkerAsync();
+            }
+            
         }
 
         private void changeToolStripMenuItem_Click(object sender, EventArgs e)

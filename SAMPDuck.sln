@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAMPDuck", "SAMPDuck\SAMPDuck.csproj", "{A56B09EE-834C-4FE0-82D6-15E3C2AA93C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnDuck", "SAMPDuck\PawnDuck.csproj", "{A56B09EE-834C-4FE0-82D6-15E3C2AA93C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
