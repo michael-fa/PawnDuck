@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Coming soon..");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Coming soon..");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_erros = new System.Windows.Forms.TabPage();
@@ -551,12 +551,12 @@
             this.tv_enums.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tv_enums.Location = new System.Drawing.Point(0, 0);
             this.tv_enums.Name = "tv_enums";
-            treeNode2.ForeColor = System.Drawing.Color.Black;
-            treeNode2.Name = "Node0";
-            treeNode2.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode2.Text = "Coming soon..";
+            treeNode1.ForeColor = System.Drawing.Color.Black;
+            treeNode1.Name = "Node0";
+            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "Coming soon..";
             this.tv_enums.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.tv_enums.Size = new System.Drawing.Size(312, 216);
             this.tv_enums.TabIndex = 0;
             // 
@@ -615,6 +615,7 @@
             // 
             this.autocompleteMenu1.SetAutocompleteMenu(this.noteBlock, null);
             this.noteBlock.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.noteBlock.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noteBlock.Location = new System.Drawing.Point(3, 273);
             this.noteBlock.Name = "noteBlock";
             this.noteBlock.Size = new System.Drawing.Size(306, 147);
