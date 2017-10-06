@@ -630,94 +630,95 @@ namespace SAMPDuck
         //compiler thread
         private void t_codeParsing_DoWork(object sender, DoWorkEventArgs e)
         {
-            string compilerDir = "compiler\\" + Config.compiler.ToString() + "\\";
+            string compilerDir = Application.StartupPath + "\\compiler\\" + Config.compiler.ToString() + "\\";
 
-            if(!File.Exists(compilerDir + "\\pawncc.exe"))
+            if (!File.Exists(compilerDir + "\\pawncc.exe"))
             {
                 MessageBox.Show("Pawn Kompiler-Programmdatei in \"" + compilerDir + "\" nicht gefunden.");
-                return;
-            }
-
-            string includeDir = Config.includepath;
-            string[] tmp = currentFilePath.Split('\\');
-            int index = 0;
-            int idex = 0;
-
-            foreach (string s in tmp)
-            {
-                if (s.Contains(".pwn"))
-                {
-                    
-                    idex=index;
-                }
-                index++;
-            }
-            string fileName = tmp[idex];
-
-
-            //We bassically copy the PWN file thats loaded in the compiler direcory
-
-
-            StreamWriter file = new StreamWriter(compilerDir + fileName.Remove(fileName.IndexOf('.')) + ".p", false, Encoding.Default);
-            file.Write(scintillaText);
-            file.Close();
-
-
-
-
-            Process compiler = new Process();
-            compiler.StartInfo.Arguments = fileName.Remove(fileName.IndexOf('.'), 4) + ".p" + " -e\"errors\" -i" + "\"" + includeDir + "\"" + " -d03";
-
-            //for zeex' version
-            if(Config.compiler == 1) compiler.StartInfo.Arguments = fileName.Remove(fileName.IndexOf('.'), 4) + ".p" + " -e\"errors\" -i" + "\"" + includeDir + "\" -Z " + " -d03";
-
-            compiler.StartInfo.WorkingDirectory = compilerDir;
-            compiler.StartInfo.FileName = "pawncc.exe";
-
-            compiler.Start();
-
-            while (!compiler.HasExited)
-            {
-
-            }
-
-            //Clear both lists
-            errorList.Clear();
-
-
-            //Check for errors
-            if (File.Exists(compilerDir + "\\errors"))
-            {
-                StreamReader errorFile = new StreamReader(compilerDir + "\\errors");
-                string errors = errorFile.ReadToEnd();
-                errorFile.Close();
-
-                string[] lines = errors.Split('\n');
-
-                foreach (string line in lines)
-                {
-                    //Add to error list
-                    ListViewItem lv = new ListViewItem(line);
-                    errorList.Add(lv);
-                    
-
-                }
-                File.Delete(compilerDir + "\\errors");
             }
             else
             {
-                File.Delete(compilerDir + "\\errors");
-                File.Delete(compilerDir + fileName.Remove(fileName.IndexOf('.'), 4) + ".p");
-                //Wait for the file to appear.
-                while (!File.Exists(compilerDir + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx"))
+                string includeDir = Config.includepath;
+                string[] tmp = currentFilePath.Split('\\');
+                int index = 0;
+                int idex = 0;
+
+                foreach (string s in tmp)
+                {
+                    if (s.Contains(".pwn"))
+                    {
+
+                        idex = index;
+                    }
+                    index++;
+                }
+                string fileName = tmp[idex];
+
+
+                //We bassically copy the PWN file thats loaded in the compiler direcory
+
+
+                StreamWriter file = new StreamWriter(compilerDir + fileName.Remove(fileName.IndexOf('.')) + ".p", false, Encoding.Default);
+                file.Write(scintillaText);
+                file.Close();
+
+
+
+
+                Process compiler = new Process();
+                compiler.StartInfo.Arguments = fileName.Remove(fileName.IndexOf('.'), 4) + ".p" + " -e\"errors\" -i" + "\"" + includeDir + "\"" + " -d03";
+
+                //for zeex' version
+                if (Config.compiler == 1) compiler.StartInfo.Arguments = fileName.Remove(fileName.IndexOf('.'), 4) + ".p" + " -e\"errors\" -i" + "\"" + includeDir + "\" -Z " + " -d03";
+
+                compiler.StartInfo.WorkingDirectory = compilerDir;
+                compiler.StartInfo.FileName = "pawncc.exe";
+
+                compiler.Start();
+
+                while (!compiler.HasExited)
                 {
 
                 }
-                //Check if a older file already exists in source folder and delete if so
-                if (File.Exists(Path.GetDirectoryName(currentFilePath) + "\\" + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx"))
-                    File.Delete(Path.GetDirectoryName(currentFilePath) + "\\" + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx");
-                //move the new compiled file to source folder
-                File.Move(compilerDir + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx", Path.GetDirectoryName(currentFilePath) + "\\" + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx");
+
+                //Clear both lists
+                errorList.Clear();
+
+
+                //Check for errors
+                if (File.Exists(compilerDir + "\\errors"))
+                {
+                    StreamReader errorFile = new StreamReader(compilerDir + "\\errors");
+                    string errors = errorFile.ReadToEnd();
+                    errorFile.Close();
+
+                    string[] lines = errors.Split('\n');
+
+                    foreach (string line in lines)
+                    {
+                        //Add to error list
+                        ListViewItem lv = new ListViewItem(line);
+                        errorList.Add(lv);
+
+
+                    }
+                    File.Delete(compilerDir + "\\errors");
+                }
+                else
+                {
+                    File.Delete(compilerDir + "\\errors");
+                    File.Delete(compilerDir + fileName.Remove(fileName.IndexOf('.'), 4) + ".p");
+                    //Wait for the file to appear.
+                    while (!File.Exists(compilerDir + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx"))
+                    {
+
+                    }
+                    //Check if a older file already exists in source folder and delete if so
+                    if (File.Exists(Path.GetDirectoryName(currentFilePath) + "\\" + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx"))
+                        File.Delete(Path.GetDirectoryName(currentFilePath) + "\\" + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx");
+                    //move the new compiled file to source folder
+                    File.Move(compilerDir + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx", Path.GetDirectoryName(currentFilePath) + "\\" + fileName.Remove(fileName.IndexOf('.'), 4) + ".amx");
+                }
             }
         }
 
