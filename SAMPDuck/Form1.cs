@@ -175,7 +175,7 @@ namespace SAMPDuck
             Config.compiler = o;
             if (o == 1)
             {
-                label_compiler.Text = "Kompiler: Zeex";
+                label_compiler.Text = "Compiler: Zeex";
                 checkBox1.Checked = true;
             }
             else
@@ -188,7 +188,7 @@ namespace SAMPDuck
             Config.runCommand = ConfigFile.Read("runCommand");
 
             //Noteblock
-            noteBlock.Text = ConfigFile.Read("notes");
+            noteBlock.Text = ConfigFile.Read("notes").Replace("%_&_%", "\n");
             Config.noteblock = ConfigFile.Read("notes");
 
             //Include dir
@@ -1218,7 +1218,13 @@ namespace SAMPDuck
 
             config.Write("compiler-mode", Config.compiler.ToString());
             config.Write("runCommand", ausführenToolStripMenuItem.DropDownItems[0].Text);
-            config.Write("notes", noteBlock.Text);
+
+            //format noteblock text - change every space to \%\
+
+            string txt = noteBlock.Text.Replace("\n", "%_&_%");
+            MessageBox.Show(txt);
+
+            config.Write("notes", txt);
             config.Write("autobackup", Config.autobackup.ToString());
             config.Write("includedir", Config.includepath);
         }
