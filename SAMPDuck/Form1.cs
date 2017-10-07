@@ -570,8 +570,8 @@ namespace SAMPDuck
         {
             //Read include files:
             //Collect all include files:
-            IEnumerable<string> includeFiles = Directory.EnumerateFiles(Application.StartupPath + "\\include");
-            IEnumerable<string> directories = Directory.EnumerateDirectories(Application.StartupPath + "\\include");
+            IEnumerable<string> includeFiles = Directory.EnumerateFiles(includedir_Tb.Text);
+            IEnumerable<string> directories = Directory.EnumerateDirectories(includedir_Tb.Text);
             foreach (string i in directories)
             {
                 IEnumerable<string> files = Directory.EnumerateFiles(i);
@@ -1222,7 +1222,6 @@ namespace SAMPDuck
             //format noteblock text - change every space to \%\
 
             string txt = noteBlock.Text.Replace("\n", "%_&_%");
-            MessageBox.Show(txt);
 
             config.Write("notes", txt);
             config.Write("autobackup", Config.autobackup.ToString());
