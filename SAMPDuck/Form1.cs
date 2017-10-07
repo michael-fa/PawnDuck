@@ -1565,5 +1565,10 @@ namespace SAMPDuck
         {
 
         }
+
+        private void noteBlock_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

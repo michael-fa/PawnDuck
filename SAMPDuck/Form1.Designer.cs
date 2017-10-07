@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Coming soon..");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Coming soon..");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_erros = new System.Windows.Forms.TabPage();
@@ -72,9 +72,9 @@
             this.tv_enums = new System.Windows.Forms.TreeView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tv_defines = new System.Windows.Forms.TreeView();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.noteBlock = new System.Windows.Forms.RichTextBox();
             this.lv_limits = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -131,6 +131,7 @@
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.noteBlock = new System.Windows.Forms.RichTextBox();
             this.panel4 = new ScintillaNET.Scintilla();
             this.scintilla1 = new ScintillaNET.Scintilla();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
@@ -158,6 +159,10 @@
             this.tabPage2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -187,7 +192,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(881, 136);
+            this.tabControl1.Size = new System.Drawing.Size(828, 203);
             this.tabControl1.TabIndex = 1;
             // 
             // tab_erros
@@ -197,7 +202,7 @@
             this.tab_erros.Location = new System.Drawing.Point(4, 22);
             this.tab_erros.Name = "tab_erros";
             this.tab_erros.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_erros.Size = new System.Drawing.Size(873, 110);
+            this.tab_erros.Size = new System.Drawing.Size(820, 177);
             this.tab_erros.TabIndex = 0;
             this.tab_erros.Text = "Fehler / Warnungen";
             this.tab_erros.UseVisualStyleBackColor = true;
@@ -212,7 +217,7 @@
             this.lv_error.Location = new System.Drawing.Point(3, 3);
             this.lv_error.MultiSelect = false;
             this.lv_error.Name = "lv_error";
-            this.lv_error.Size = new System.Drawing.Size(867, 104);
+            this.lv_error.Size = new System.Drawing.Size(814, 171);
             this.lv_error.TabIndex = 0;
             this.lv_error.UseCompatibleStateImageBehavior = false;
             this.lv_error.View = System.Windows.Forms.View.Details;
@@ -229,7 +234,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(873, 110);
+            this.tabPage12.Size = new System.Drawing.Size(820, 177);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Output";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -241,7 +246,7 @@
             this.output.Location = new System.Drawing.Point(3, 3);
             this.output.Name = "output";
             this.output.ReadOnly = true;
-            this.output.Size = new System.Drawing.Size(867, 104);
+            this.output.Size = new System.Drawing.Size(814, 171);
             this.output.TabIndex = 0;
             this.output.Text = "";
             // 
@@ -254,14 +259,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(881, 33);
+            this.panel1.Size = new System.Drawing.Size(828, 33);
             this.panel1.TabIndex = 3;
             // 
             // autoBackup_cb
             // 
             this.autoBackup_cb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.autoBackup_cb.AutoSize = true;
-            this.autoBackup_cb.Location = new System.Drawing.Point(520, 6);
+            this.autoBackup_cb.Location = new System.Drawing.Point(467, 6);
             this.autoBackup_cb.Name = "autoBackup_cb";
             this.autoBackup_cb.Size = new System.Drawing.Size(88, 17);
             this.autoBackup_cb.TabIndex = 4;
@@ -273,7 +278,7 @@
             // 
             this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(620, 6);
+            this.checkBox1.Location = new System.Drawing.Point(567, 6);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBox1.Size = new System.Drawing.Size(93, 17);
@@ -289,7 +294,7 @@
             this.label_compiler.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label_compiler.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_compiler.ForeColor = System.Drawing.Color.Green;
-            this.label_compiler.Location = new System.Drawing.Point(725, 4);
+            this.label_compiler.Location = new System.Drawing.Point(672, 4);
             this.label_compiler.Name = "label_compiler";
             this.label_compiler.Size = new System.Drawing.Size(108, 19);
             this.label_compiler.TabIndex = 1;
@@ -304,7 +309,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(828, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -461,9 +466,9 @@
             // 
             this.panel3.Controls.Add(this.splitContainer1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(881, 0);
+            this.panel3.Location = new System.Drawing.Point(828, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(320, 731);
+            this.panel3.Size = new System.Drawing.Size(320, 1053);
             this.panel3.TabIndex = 4;
             // 
             // splitContainer1
@@ -479,9 +484,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(320, 731);
-            this.splitContainer1.SplitterDistance = 242;
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer1.Size = new System.Drawing.Size(320, 1053);
+            this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.TabIndex = 0;
             // 
             // tablist_header
@@ -494,7 +499,7 @@
             this.tablist_header.Location = new System.Drawing.Point(0, 0);
             this.tablist_header.Name = "tablist_header";
             this.tablist_header.SelectedIndex = 0;
-            this.tablist_header.Size = new System.Drawing.Size(320, 242);
+            this.tablist_header.Size = new System.Drawing.Size(320, 345);
             this.tablist_header.TabIndex = 0;
             this.tablist_header.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
@@ -504,7 +509,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(312, 216);
+            this.tabPage1.Size = new System.Drawing.Size(312, 319);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bibliothek";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -514,7 +519,7 @@
             this.tv_libs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tv_libs.Location = new System.Drawing.Point(3, 3);
             this.tv_libs.Name = "tv_libs";
-            this.tv_libs.Size = new System.Drawing.Size(306, 210);
+            this.tv_libs.Size = new System.Drawing.Size(306, 313);
             this.tv_libs.TabIndex = 0;
             // 
             // tabPage2
@@ -523,7 +528,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(312, 216);
+            this.tabPage2.Size = new System.Drawing.Size(312, 322);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Spieler Variablen";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -533,7 +538,7 @@
             this.tv_pvars.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tv_pvars.Location = new System.Drawing.Point(3, 3);
             this.tv_pvars.Name = "tv_pvars";
-            this.tv_pvars.Size = new System.Drawing.Size(306, 210);
+            this.tv_pvars.Size = new System.Drawing.Size(306, 316);
             this.tv_pvars.TabIndex = 0;
             // 
             // tabPage5
@@ -541,7 +546,7 @@
             this.tabPage5.Controls.Add(this.tv_enums);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(312, 216);
+            this.tabPage5.Size = new System.Drawing.Size(312, 322);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Enumeratoren";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -551,13 +556,13 @@
             this.tv_enums.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tv_enums.Location = new System.Drawing.Point(0, 0);
             this.tv_enums.Name = "tv_enums";
-            treeNode1.ForeColor = System.Drawing.Color.Black;
-            treeNode1.Name = "Node0";
-            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode1.Text = "Coming soon..";
+            treeNode6.ForeColor = System.Drawing.Color.Black;
+            treeNode6.Name = "Node0";
+            treeNode6.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode6.Text = "Coming soon..";
             this.tv_enums.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.tv_enums.Size = new System.Drawing.Size(312, 216);
+            treeNode6});
+            this.tv_enums.Size = new System.Drawing.Size(312, 322);
             this.tv_enums.TabIndex = 0;
             // 
             // tabPage6
@@ -565,7 +570,7 @@
             this.tabPage6.Controls.Add(this.tv_defines);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(312, 216);
+            this.tabPage6.Size = new System.Drawing.Size(312, 322);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Definitionen";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -575,8 +580,28 @@
             this.tv_defines.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tv_defines.Location = new System.Drawing.Point(0, 0);
             this.tv_defines.Name = "tv_defines";
-            this.tv_defines.Size = new System.Drawing.Size(312, 216);
+            this.tv_defines.Size = new System.Drawing.Size(312, 322);
             this.tv_defines.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.AutoScroll = true;
+            this.splitContainer3.Panel1.Controls.Add(this.tabControl2);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.noteBlock);
+            this.splitContainer3.Size = new System.Drawing.Size(313, 698);
+            this.splitContainer3.SplitterDistance = 472;
+            this.splitContainer3.TabIndex = 6;
             // 
             // tabControl2
             // 
@@ -596,31 +621,19 @@
             this.tabControl2.Multiline = true;
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(320, 485);
+            this.tabControl2.Size = new System.Drawing.Size(313, 472);
             this.tabControl2.TabIndex = 2;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.noteBlock);
             this.tabPage3.Controls.Add(this.lv_limits);
-            this.tabPage3.Location = new System.Drawing.Point(4, 58);
+            this.tabPage3.Location = new System.Drawing.Point(4, 76);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(312, 423);
+            this.tabPage3.Size = new System.Drawing.Size(221, 155);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Limits";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // noteBlock
-            // 
-            this.autocompleteMenu1.SetAutocompleteMenu(this.noteBlock, null);
-            this.noteBlock.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.noteBlock.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteBlock.Location = new System.Drawing.Point(3, 273);
-            this.noteBlock.Name = "noteBlock";
-            this.noteBlock.Size = new System.Drawing.Size(306, 147);
-            this.noteBlock.TabIndex = 1;
-            this.noteBlock.Text = "";
             // 
             // lv_limits
             // 
@@ -631,7 +644,7 @@
             this.lv_limits.FullRowSelect = true;
             this.lv_limits.Location = new System.Drawing.Point(3, 3);
             this.lv_limits.Name = "lv_limits";
-            this.lv_limits.Size = new System.Drawing.Size(306, 417);
+            this.lv_limits.Size = new System.Drawing.Size(215, 149);
             this.lv_limits.TabIndex = 1;
             this.lv_limits.UseCompatibleStateImageBehavior = false;
             this.lv_limits.View = System.Windows.Forms.View.Details;
@@ -648,10 +661,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.lv_playerkeys);
-            this.tabPage4.Location = new System.Drawing.Point(4, 58);
+            this.tabPage4.Location = new System.Drawing.Point(4, 76);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(312, 423);
+            this.tabPage4.Size = new System.Drawing.Size(221, 155);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Spieler Tasten";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -669,7 +682,7 @@
             this.lv_playerkeys.FullRowSelect = true;
             this.lv_playerkeys.Location = new System.Drawing.Point(3, 3);
             this.lv_playerkeys.Name = "lv_playerkeys";
-            this.lv_playerkeys.Size = new System.Drawing.Size(306, 417);
+            this.lv_playerkeys.Size = new System.Drawing.Size(215, 149);
             this.lv_playerkeys.TabIndex = 1;
             this.lv_playerkeys.UseCompatibleStateImageBehavior = false;
             this.lv_playerkeys.View = System.Windows.Forms.View.Details;
@@ -705,7 +718,7 @@
             this.tabPage7.Controls.Add(this.lv_specialactions);
             this.tabPage7.Location = new System.Drawing.Point(4, 58);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(312, 423);
+            this.tabPage7.Size = new System.Drawing.Size(308, 392);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Spezielle Aktionen";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -719,7 +732,7 @@
             this.lv_specialactions.FullRowSelect = true;
             this.lv_specialactions.Location = new System.Drawing.Point(0, 0);
             this.lv_specialactions.Name = "lv_specialactions";
-            this.lv_specialactions.Size = new System.Drawing.Size(312, 423);
+            this.lv_specialactions.Size = new System.Drawing.Size(308, 392);
             this.lv_specialactions.TabIndex = 1;
             this.lv_specialactions.UseCompatibleStateImageBehavior = false;
             this.lv_specialactions.View = System.Windows.Forms.View.Details;
@@ -736,9 +749,9 @@
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.lv_weapons);
-            this.tabPage8.Location = new System.Drawing.Point(4, 58);
+            this.tabPage8.Location = new System.Drawing.Point(4, 76);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(312, 423);
+            this.tabPage8.Size = new System.Drawing.Size(221, 155);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "Waffen";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -756,7 +769,7 @@
             this.lv_weapons.FullRowSelect = true;
             this.lv_weapons.Location = new System.Drawing.Point(0, 0);
             this.lv_weapons.Name = "lv_weapons";
-            this.lv_weapons.Size = new System.Drawing.Size(312, 423);
+            this.lv_weapons.Size = new System.Drawing.Size(221, 155);
             this.lv_weapons.TabIndex = 1;
             this.lv_weapons.UseCompatibleStateImageBehavior = false;
             this.lv_weapons.View = System.Windows.Forms.View.Details;
@@ -792,7 +805,7 @@
             this.tabPage9.Controls.Add(this.lv_pickupmodels);
             this.tabPage9.Location = new System.Drawing.Point(4, 58);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(312, 423);
+            this.tabPage9.Size = new System.Drawing.Size(305, 410);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Pickup Models";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -806,7 +819,7 @@
             this.lv_pickupmodels.FullRowSelect = true;
             this.lv_pickupmodels.Location = new System.Drawing.Point(0, 0);
             this.lv_pickupmodels.Name = "lv_pickupmodels";
-            this.lv_pickupmodels.Size = new System.Drawing.Size(312, 423);
+            this.lv_pickupmodels.Size = new System.Drawing.Size(305, 410);
             this.lv_pickupmodels.TabIndex = 1;
             this.lv_pickupmodels.UseCompatibleStateImageBehavior = false;
             this.lv_pickupmodels.View = System.Windows.Forms.View.Details;
@@ -826,7 +839,7 @@
             this.tabPage10.Controls.Add(this.lv_pickuptypes);
             this.tabPage10.Location = new System.Drawing.Point(4, 58);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(312, 423);
+            this.tabPage10.Size = new System.Drawing.Size(308, 409);
             this.tabPage10.TabIndex = 5;
             this.tabPage10.Text = "Pickup Typen";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -840,7 +853,7 @@
             this.lv_pickuptypes.FullRowSelect = true;
             this.lv_pickuptypes.Location = new System.Drawing.Point(0, 0);
             this.lv_pickuptypes.Name = "lv_pickuptypes";
-            this.lv_pickuptypes.Size = new System.Drawing.Size(312, 423);
+            this.lv_pickuptypes.Size = new System.Drawing.Size(308, 409);
             this.lv_pickuptypes.TabIndex = 1;
             this.lv_pickuptypes.UseCompatibleStateImageBehavior = false;
             this.lv_pickuptypes.View = System.Windows.Forms.View.Details;
@@ -848,7 +861,7 @@
             // columnHeader24
             // 
             this.columnHeader24.Text = "Wert";
-            this.columnHeader24.Width = 113;
+            this.columnHeader24.Width = 112;
             // 
             // columnHeader25
             // 
@@ -857,9 +870,9 @@
             // tabPage11
             // 
             this.tabPage11.Controls.Add(this.lv_vehicles);
-            this.tabPage11.Location = new System.Drawing.Point(4, 58);
+            this.tabPage11.Location = new System.Drawing.Point(4, 76);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(312, 423);
+            this.tabPage11.Size = new System.Drawing.Size(221, 155);
             this.tabPage11.TabIndex = 6;
             this.tabPage11.Text = "Fahrzeuge";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -873,7 +886,7 @@
             this.lv_vehicles.FullRowSelect = true;
             this.lv_vehicles.Location = new System.Drawing.Point(0, 0);
             this.lv_vehicles.Name = "lv_vehicles";
-            this.lv_vehicles.Size = new System.Drawing.Size(312, 423);
+            this.lv_vehicles.Size = new System.Drawing.Size(221, 155);
             this.lv_vehicles.TabIndex = 1;
             this.lv_vehicles.UseCompatibleStateImageBehavior = false;
             this.lv_vehicles.View = System.Windows.Forms.View.Details;
@@ -891,10 +904,10 @@
             // tabPage13
             // 
             this.tabPage13.Controls.Add(this.lv_weather);
-            this.tabPage13.Location = new System.Drawing.Point(4, 58);
+            this.tabPage13.Location = new System.Drawing.Point(4, 76);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(312, 423);
+            this.tabPage13.Size = new System.Drawing.Size(221, 155);
             this.tabPage13.TabIndex = 7;
             this.tabPage13.Text = "Wetter ID\'s";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -907,7 +920,7 @@
             this.lv_weather.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lv_weather.Location = new System.Drawing.Point(3, 3);
             this.lv_weather.Name = "lv_weather";
-            this.lv_weather.Size = new System.Drawing.Size(306, 417);
+            this.lv_weather.Size = new System.Drawing.Size(215, 149);
             this.lv_weather.TabIndex = 2;
             this.lv_weather.UseCompatibleStateImageBehavior = false;
             this.lv_weather.View = System.Windows.Forms.View.Details;
@@ -915,9 +928,9 @@
             // tabPage14
             // 
             this.tabPage14.Controls.Add(this.lv_bodyparts);
-            this.tabPage14.Location = new System.Drawing.Point(4, 58);
+            this.tabPage14.Location = new System.Drawing.Point(4, 76);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(312, 423);
+            this.tabPage14.Size = new System.Drawing.Size(221, 155);
             this.tabPage14.TabIndex = 8;
             this.tabPage14.Text = "Körperregionen";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -930,7 +943,7 @@
             this.lv_bodyparts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lv_bodyparts.Location = new System.Drawing.Point(0, 0);
             this.lv_bodyparts.Name = "lv_bodyparts";
-            this.lv_bodyparts.Size = new System.Drawing.Size(312, 423);
+            this.lv_bodyparts.Size = new System.Drawing.Size(221, 155);
             this.lv_bodyparts.TabIndex = 0;
             this.lv_bodyparts.UseCompatibleStateImageBehavior = false;
             this.lv_bodyparts.View = System.Windows.Forms.View.Details;
@@ -947,9 +960,9 @@
             // tabPage15
             // 
             this.tabPage15.Controls.Add(this.panel5);
-            this.tabPage15.Location = new System.Drawing.Point(4, 58);
+            this.tabPage15.Location = new System.Drawing.Point(4, 76);
             this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Size = new System.Drawing.Size(312, 423);
+            this.tabPage15.Size = new System.Drawing.Size(221, 155);
             this.tabPage15.TabIndex = 9;
             this.tabPage15.Text = "Fahrzeug Farben";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -961,7 +974,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(312, 423);
+            this.panel5.Size = new System.Drawing.Size(221, 155);
             this.panel5.TabIndex = 0;
             // 
             // pictureBox1
@@ -976,9 +989,9 @@
             // tabPage16
             // 
             this.tabPage16.Controls.Add(this.lv_explosiontypes);
-            this.tabPage16.Location = new System.Drawing.Point(4, 58);
+            this.tabPage16.Location = new System.Drawing.Point(4, 76);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(312, 423);
+            this.tabPage16.Size = new System.Drawing.Size(221, 155);
             this.tabPage16.TabIndex = 10;
             this.tabPage16.Text = "Explosionstypen";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -997,7 +1010,7 @@
             this.lv_explosiontypes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lv_explosiontypes.Location = new System.Drawing.Point(0, 0);
             this.lv_explosiontypes.Name = "lv_explosiontypes";
-            this.lv_explosiontypes.Size = new System.Drawing.Size(312, 423);
+            this.lv_explosiontypes.Size = new System.Drawing.Size(221, 155);
             this.lv_explosiontypes.TabIndex = 0;
             this.lv_explosiontypes.UseCompatibleStateImageBehavior = false;
             this.lv_explosiontypes.View = System.Windows.Forms.View.Details;
@@ -1035,6 +1048,18 @@
             // 
             this.columnHeader33.Text = "Reichweite";
             // 
+            // noteBlock
+            // 
+            this.autocompleteMenu1.SetAutocompleteMenu(this.noteBlock, null);
+            this.noteBlock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.noteBlock.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteBlock.Location = new System.Drawing.Point(0, 0);
+            this.noteBlock.Name = "noteBlock";
+            this.noteBlock.Size = new System.Drawing.Size(313, 222);
+            this.noteBlock.TabIndex = 1;
+            this.noteBlock.Text = "";
+            this.noteBlock.TextChanged += new System.EventHandler(this.noteBlock_TextChanged);
+            // 
             // panel4
             // 
             this.panel4.Location = new System.Drawing.Point(0, 32);
@@ -1047,7 +1072,7 @@
             this.scintilla1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scintilla1.Location = new System.Drawing.Point(0, 0);
             this.scintilla1.Name = "scintilla1";
-            this.scintilla1.Size = new System.Drawing.Size(881, 535);
+            this.scintilla1.Size = new System.Drawing.Size(828, 790);
             this.scintilla1.TabIndex = 5;
             this.scintilla1.UseTabs = true;
             this.scintilla1.WrapIndentMode = ScintillaNET.WrapIndentMode.Indent;
@@ -1098,8 +1123,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(881, 675);
-            this.splitContainer2.SplitterDistance = 535;
+            this.splitContainer2.Size = new System.Drawing.Size(828, 997);
+            this.splitContainer2.SplitterDistance = 790;
             this.splitContainer2.TabIndex = 6;
             // 
             // label_Args
@@ -1131,7 +1156,7 @@
             // 
             this.label_info.AutoSize = true;
             this.label_info.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label_info.Location = new System.Drawing.Point(846, 0);
+            this.label_info.Location = new System.Drawing.Point(793, 0);
             this.label_info.Name = "label_info";
             this.label_info.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label_info.Size = new System.Drawing.Size(35, 13);
@@ -1149,9 +1174,9 @@
             this.panel2.Controls.Add(this.label_info);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel2.Location = new System.Drawing.Point(0, 709);
+            this.panel2.Location = new System.Drawing.Point(0, 1031);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(881, 22);
+            this.panel2.Size = new System.Drawing.Size(828, 22);
             this.panel2.TabIndex = 9;
             // 
             // Form1
@@ -1159,7 +1184,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1201, 731);
+            this.ClientSize = new System.Drawing.Size(1148, 1053);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer2);
@@ -1190,6 +1215,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -1327,6 +1356,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader31;
         private System.Windows.Forms.ColumnHeader columnHeader32;
         private System.Windows.Forms.ColumnHeader columnHeader33;
+        private System.Windows.Forms.SplitContainer splitContainer3;
     }
 }
 
