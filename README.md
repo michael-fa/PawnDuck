@@ -17,3 +17,7 @@ Außerdem nutzt PawnDuck Teile von [PawnFox](https://github.com/ParticularPhil/P
 ## Entwicklung
 Im Moment steht nicht fest, welches Feature eingebaut wird. Nichts ist momentan geplant.<br>
 
+
+## Alt
+Diese IDE ist alt, und zum damaligen Zeitpunkt schlecht programmiert.
+Es wurde nicht auf Performance geachtet.
