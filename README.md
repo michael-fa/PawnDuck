@@ -1,4 +1,9 @@
 [logo]: https://raw.githubusercontent.com/Cocnut/PawnDuck/master/SAMPDuck/pawnduckico.ico ""
+
+## Alt
+Diese IDE ist alt, und zum damaligen Zeitpunkt schlecht programmiert.
+Es wurde nicht auf Performance geachtet.
+
 # PawnDuck 
 Hi! Im sorry, but this project's *'front-end'* language is and will be for now **only in german**.
 ## Info
@@ -18,6 +23,3 @@ Außerdem nutzt PawnDuck Teile von [PawnFox](https://github.com/ParticularPhil/P
 Im Moment steht nicht fest, welches Feature eingebaut wird. Nichts ist momentan geplant.<br>
 
 
-## Alt
-Diese IDE ist alt, und zum damaligen Zeitpunkt schlecht programmiert.
-Es wurde nicht auf Performance geachtet.
